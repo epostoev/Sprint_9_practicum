@@ -22,5 +22,7 @@ jobs:
       - name: Check out repository code  # Имя шага задаём сами
         uses: actions/checkout@v3  # Берём готовое решение из библиотеки GitHub Actions
       # Выполняем команду tree в текущей директории
-      - name: Print project tree
-        run: tree .
+      # - name: Print project tree
+      #   run: tree .
+      - name: Run tests in docker
+        run: docker compose up --build --exit-code-from test_docker 
